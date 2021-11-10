@@ -172,7 +172,7 @@ label::after {
     border-radius: 3px;
     font-size: 0.7em;
     content: "必須";
-    color: white;
+    color: rgba(231, 76, 60, 0.8);
 }
 
 
@@ -219,7 +219,8 @@ textarea::placeholder {
 }
 
 #save,
-#select {
+#select,
+#allClear {
     padding: 0.6em 1em;
     border-radius: 0.3em;
     color: whitesmoke;
@@ -230,11 +231,13 @@ textarea::placeholder {
     border: none;
     /*カーソルをポインターの形（かたち）にする*/
 }
-.delItem{
+
+.delItem {
     cursor: pointer;
     color: #e74c3c;
     padding: 0.6em 1em;
 }
+
 
 /* table  */
 
