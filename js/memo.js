@@ -1,5 +1,5 @@
 "use strict";
-
+console.log(1);
 window.addEventListener('DOMContentLoaded', function() {
 
     if (typeof localStorage === "undefined") {
@@ -37,40 +37,40 @@ const saveLocalStorage = () => {
 };
 // viewStorage function 
 const viewStorage = () => {
-    const list = document.querySelector('#list');
-    while (list.rows[0]) list.deleteRow(0);
-    for (let i = 0; i < localStorage.length; i++) {
-        let w_key = localStorage.key(i);
+        const list = document.querySelector('#list');
+        while (list.rows[0]) list.deleteRow(0);
+        for (let i = 0; i < localStorage.length; i++) {
+            let w_key = localStorage.key(i);
 
-        let tr = document.createElement('tr');
-        let td1 = document.createElement('td');
-        let td2 = document.createElement('td');
-        let td3 = document.createElement('td');
-        let td4 = document.createElement('td');
+            let tr = document.createElement('tr');
+            let td1 = document.createElement('td');
+            let td2 = document.createElement('td');
+            let td3 = document.createElement('td');
+            let td4 = document.createElement('td');
 
-        
-        list.appendChild(tr);
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        tr.appendChild(td3);
-        tr.appendChild(td4);
-        
-        td1.innerHTML = `<input type="radio" name="radio1">`
-        td2.innerHTML = w_key;
-        td3.innerHTML = localStorage.getItem(w_key);
-        td4.innerHTML = `<i class="far fa-trash-alt delItem"></i>`;
+
+            list.appendChild(tr);
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+
+            td1.innerHTML = `<input type="radio" name="radio1">`
+            td2.innerHTML = w_key;
+            td3.innerHTML = localStorage.getItem(w_key);
+            td4.innerHTML = `<i class="far fa-trash-alt delItem"></i>`;
+        }
     }
-}
-//delLocalStorage function
+    //delLocalStorage function
 
 const delLocalStorage = () => {
     const del = document.querySelectorAll('.delItem');
     del.forEach(item => {
-        item.addEventListener('click',(e) => {
+        item.addEventListener('click', (e) => {
             e.preventDefault();
             let w_sel = "0";
             w_sel = selectRadioBtn();
-            if(w_sel === "1"){
+            if (w_sel === "1") {
                 const key = document.querySelector('#textKey').value;
                 const value = document.querySelector('#textMemo').value;
                 localStorage.removeItem(key);
@@ -82,7 +82,7 @@ const delLocalStorage = () => {
                 location.reload(false);
             }
         })
-    }),false
+    }), false
 }
 
 
