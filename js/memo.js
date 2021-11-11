@@ -1,5 +1,5 @@
 "use strict";
-console.log(1);
+console.log("hello")
 window.addEventListener('DOMContentLoaded', function() {
 
     if (typeof localStorage === "undefined") {
